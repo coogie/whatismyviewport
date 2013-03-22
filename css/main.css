@@ -39,35 +39,11 @@ body {
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
-body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+html {
+    font-family: Helvetica, Helvetica Neue, Arial;
+    font-size: 62.5%;
 }
 
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
-}
-
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.footer-container {border-top: 20px solid #e44d26;}
-
-.footer-container {background: #f16529;}
-
-/* ==============
-    MOBILE: Main
-   ============== */
-
-.main {
-    padding: 30px 0;
-}
-
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
 
 /* ==========================================================================
    Author's custom styles
@@ -83,39 +59,59 @@ body {
 
 html, body {height: 100%;}
 
-.main-container {
+.site-container {
     height: 100%;
-    padding-bottom: 150px;
-    width: 100%;
 
     /* Flexbox hawtness */
-    display: -webkit-flex;
-    display: flex;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-flex-direction: column;
+   flex-direction:         column;
+}
+
+.main-container {
+    width: 100%;
+    margin: auto;
 }
     .main.wrapper {
+        color: #f16529;
+        font-size: 3rem;
         margin: auto;
         text-align: center;
+           -webkit-flex: 3 1 60%;
+           flex: 3 1 60%;
     }
-        .main.wrapper h1,
-        .main.wrapper .dimensions {
-            color: #f16529;
-            font-size: 3.5rem;
-            line-height: 3rem;
-        }
         .main.wrapper h1 {
             margin-top: 0;
             margin-bottom: 50px;
         }
+        .main.wrapper .dimensions {
+            font-size: 2em;
+        }
+
+#w::after,
+#h::after {
+    content: "px";
+    font-size: 2rem;
+}
 
 .footer-container {
-    min-height: 120px;
-    padding-bottom: 10px;
-    position: fixed;
-        right: 0; bottom: 0; left: 0;
+    background: #f16529;
+    border-top: 20px solid #e44d26;
+    color: white;
+    font-size: 1.6rem;
+    padding: 20px;
+/*    position: fixed;
+        right: 0; bottom: 0; left: 0;*/
 }
     .footer-container h3 {
         margin: 0;
     }
+    .footer-container hr {
+        border: none;
+        border-bottom: 1px dashed #fff;
+    }
+    .footer-container .wrapper {overflow: hidden;}
     .maintainers {
         list-style-type: none;
         padding: 0;
@@ -137,19 +133,18 @@ html, body {height: 100%;}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-@media only screen and (max-width: 568px) {
 
-/* ====================
-    Break the dimensions for mobile
-   ==================== */
-    #w,
-    #h {
+/* Responsive: Landscape phone AND UP TO desktop/tablet
+/* --------------------------------------------- */
+@media (max-width: 767px) {
+    .main.wrapper h1 {display: none;}
+}
+
+/* UP TO LANDSCAPE PHONE MAX
+/* ------------------------- */
+@media (max-width: 480px) {
+    #w, #h {
         display: block;
-    }
-    #w::after,
-    #h::after {
-        content: "px";
-        font-size: 2rem;
     }
 }
 
