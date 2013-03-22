@@ -8,6 +8,9 @@
     -- @coog_ie
     -- http://coog.ie
 
+Shane O'Grady
+    -- @shaneog
+    -- http://ogrady.ie
 
 # TECHNOLOGY COLOPHON
 
