@@ -157,8 +157,62 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+}
 
+html, body {height: 100%;}
 
+.main-container {
+    height: 100%;
+    padding-bottom: 120px;
+    width: 100%;
+
+    /* Flexbox hawtness */
+    display: -webkit-flex;
+    display: flex;
+}
+    .main.wrapper {
+        margin: auto;
+        text-align: center;
+    }
+        .main.wrapper h1,
+        .main.wrapper .dimension {
+            color: #f16529;
+            font-size: 4rem;
+            line-height: 3.5rem;
+        }
+        .main.wrapper h1 {margin-bottom: 50px;}
+
+.footer-container {
+    min-height: 120px;
+    padding-bottom: 10px;
+    position: absolute;
+        right: 0; bottom: 0; left: 0;
+}
+    .footer-container h3 {
+        margin: 0;
+    }
+    .maintainers {
+        list-style-type: none;
+        padding: 0;
+    }
+        .maintainers li {
+            display: inline;
+            float: left;
+            padding: 0 7px;
+        }
+        .maintainers li:not(:last-child)::after {content: ","; margin-left: 3px;}
+            .maintainers li a {
+                border-bottom: 1px dotted;
+                color: #fff;
+                display: inline-block;
+                text-decoration: none;
+            }
 
 
 
