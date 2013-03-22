@@ -27,29 +27,6 @@ body {
     text-shadow: none;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
-img {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
-
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
@@ -75,15 +52,9 @@ body {
     ALL: Orange Theme
    =================== */
 
-.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
-}
+.footer-container {border-top: 20px solid #e44d26;}
 
-.footer-container,
-.main aside {
-    background: #f16529;
-}
+.footer-container {background: #f16529;}
 
 /* ==============
     MOBILE: Main
@@ -91,15 +62,6 @@ body {
 
 .main {
     padding: 30px 0;
-}
-
-.main article h1 {
-    font-size: 2em;
-}
-
-.main aside {
-    color: white;
-    padding: 0px 5% 10px;
 }
 
 .footer-container footer {
@@ -123,7 +85,7 @@ html, body {height: 100%;}
 
 .main-container {
     height: 100%;
-    margin-bottom: -50px;
+    padding-bottom: 150px;
     width: 100%;
 
     /* Flexbox hawtness */
@@ -148,6 +110,8 @@ html, body {height: 100%;}
 .footer-container {
     min-height: 120px;
     padding-bottom: 10px;
+    position: fixed;
+        right: 0; bottom: 0; left: 0;
 }
     .footer-container h3 {
         margin: 0;
@@ -173,12 +137,12 @@ html, body {height: 100%;}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 568px) {
 
 /* ====================
     Break the dimensions for mobile
    ==================== */
-    #w, 
+    #w,
     #h {
         display: block;
     }
@@ -189,7 +153,14 @@ html, body {height: 100%;}
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 568px) and (orientation:landscape) {
+    .main h1 {
+        display: none;
+    }
+    #w,
+    #h {
+        display: inline;
+    }
 }
 
 @media only screen and (min-width: 1140px) {
@@ -220,75 +191,4 @@ html, body {height: 100%;}
 
 .clearfix {
     *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }
