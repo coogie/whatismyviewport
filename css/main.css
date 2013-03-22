@@ -75,23 +75,14 @@ body {
     ALL: Orange Theme
    =================== */
 
-.header-container {
-    border-bottom: 20px solid #e44d26;
-}
-
 .footer-container,
 .main aside {
     border-top: 20px solid #e44d26;
 }
 
-.header-container,
 .footer-container,
 .main aside {
     background: #f16529;
-}
-
-.title {
-    color: white;
 }
 
 /* ==============
@@ -114,14 +105,6 @@ body {
 .footer-container footer {
     color: white;
     padding: 20px 0;
-}
-
-/* ===============
-    ALL: IE Fixes
-   =============== */
-
-.ie7 .title {
-    padding-top: 20px;
 }
 
 /* ==========================================================================
@@ -196,12 +179,12 @@ html, body {height: 100%;}
 /* ====================
     Break the dimensions for mobile
    ==================== */
-    .dimensions .w,
-    .dimensions .h {
+    #w, 
+    #h {
         display: block;
     }
-    .dimensions .w::after,
-    .dimensions .h::after {
+    #w::after,
+    #h::after {
         content: "px";
         font-size: 2rem;
     }
