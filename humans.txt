@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+  Stephen Coogan
+    -- Pixel Wizard
+    -- @coog_ie
+    -- http://coog.ie
 
-# THANKS
-
-    <name>
 
 # TECHNOLOGY COLOPHON
 
