@@ -6,9 +6,11 @@ b.left<=j()};a.inY=function(a,c){var b=g(a,c);return!!b&&0<=b.bottom&&b.top<=k()
 if (window.addEventListener) { // Mozilla, Netscape, Firefox
     window.addEventListener('load', displayViewport, false);
     window.addEventListener('resize', displayViewport, false);
+    window.addEventListener('orientationchange', displayViewport, false);
 } else if (window.attachEvent) { // IE
     window.attachEvent('onload', displayViewport);
     window.attachEvent('onresize', displayViewport);
+    window.attachEvent('onorientationchange', displayViewport);
 }
 
 function displayViewport(event) {
