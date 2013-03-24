@@ -51,35 +51,58 @@ html {
 
 * {
     -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    -ms-box-sizing:     border-box;
-    -o-box-sizing:      border-box;
-    box-sizing:         border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html, body {height: 100%;}
 
 .site-container {
     height: 100%;
+    width: 100%;
 
-    /* Flexbox hawtness */
-   display: -webkit-flex;
-   display:         flex;
-   -webkit-flex-direction: column;
-   flex-direction:         column;
+    /* Old flexbox syntax - maximise support for layout */
+    display: -webkit-box;
+    display:    -moz-box;
+    display:     -ms-box;
+    display:      -o-box;
+    display:         box;
+    -webkit-box-orient: vertical;
+       -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+         -o-box-orient: vertical;
+            box-orient: vertical;
+    
+    /* New flexbox syntax! */
+    display: -webkit-flex;
+    display:    -moz-flex;
+    display:     -ms-flex;
+    display:      -o-flex;
+    display:         flex;
+    -webkit-flex-direction: column;
+       -moz-flex-direction: column;
+        -ms-flex-direction: column;
+         -o-flex-direction: column;
+            flex-direction: column;
 }
 
 .main-container {
     width: 100%;
     margin: auto;
+
+    -webkit-box-flex: 1;
+       -moz-box-flex: 1;
+        -ms-box-flex: 1;
+         -o-box-flex: 1;
+            box-flex: 1;
 }
     .main.wrapper {
         color: #f16529;
         font-size: 3rem;
         margin: auto;
         text-align: center;
-           -webkit-flex: 3 1 60%;
-           flex: 3 1 60%;
     }
         .main.wrapper h1 {
             margin-top: 0;
