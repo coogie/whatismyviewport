@@ -3,16 +3,16 @@
 
 # TEAM
 
-  Stephen Coogan
-    -- Pixel Wizard
-    -- @coog_ie
-    -- http://coog.ie
+Stephen Coogan
+	-- Pixel Wizard
+	-- @coog_ie
+	-- http://coog.ie/
 
 Shane O'Grady
-    -- @shaneog
-    -- http://ogrady.ie
+	-- @shaneog
+	-- http://ogrady.ie/
 
 # TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    jQuery, Modernizr
+	HTML5, CSS3
+	jQuery, Modernizr
+	Github Pages
