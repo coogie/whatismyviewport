@@ -4,13 +4,12 @@
 # TEAM
 
 Stephen Coogan
-	-- Pixel Wizard
 	-- @coog_ie
-	-- http://coog.ie/
+	-- https://coog.ie/
 
 Shane O'Grady
 	-- @shaneog
-	-- http://ogrady.ie/
+	-- https://ogrady.ie/
 
 # TECHNOLOGY COLOPHON
 	HTML5, CSS3
