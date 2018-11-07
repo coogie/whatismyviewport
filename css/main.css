@@ -1,4 +1,22 @@
 /* ==========================================================================
+   Shiny new CSS Custom Properties for theming
+   ========================================================================== */
+:root {
+    --theme-background: #fff;
+    --theme-primary:        hsla(18, 88%, 55%, 1);
+    --theme-primary-darken: hsla(18, 88%, 48%, 1);
+    --theme-color: var(--theme-background);
+}
+
+@media (prefers-color-scheme: dark) { 
+    :root {
+      --theme-background: #2a2a2a;
+      --theme-primary:        hsla(27, 93%, 58%, 1);
+      --theme-primary-darken: hsla(27, 93%, 51%, 1);
+    }
+} 
+
+/* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
 
@@ -11,6 +29,8 @@ textarea {
 }
 
 body {
+    background-color: #fff;
+    background-color: var(--theme-background);
     font-size: 1em;
     line-height: 1.4;
 }
@@ -100,6 +120,7 @@ html, body {height: 100%;}
 }
     .main.wrapper {
         color: #f16529;
+        color: var(--theme-primary);
         font-size: 3rem;
         margin: auto;
         text-align: center;
@@ -120,19 +141,23 @@ html, body {height: 100%;}
 
 .footer-container {
     background: #f16529;
-    border-top: 20px solid #e44d26;
-    color: white;
+    background: var(--theme-primary);
+    border-top: 20px solid;
+    border-top-color: #e44d26;
+    border-top-color: var(--theme-primary-darken);
+    color: #fff;
+    color: var(--theme-color);
     font-size: 1.6rem;
     padding: 20px;
-/*    position: fixed;
-        right: 0; bottom: 0; left: 0;*/
 }
     .footer-container h3 {
         margin: 0;
     }
     .footer-container hr {
         border: none;
-        border-bottom: 1px dashed #fff;
+        border-bottom: 1px dashed;
+        border-bottom-color: #fff;
+        border-bottom-color: var(--theme-color);
     }
     .footer-container .wrapper {overflow: hidden;}
     .maintainers {
@@ -148,6 +173,7 @@ html, body {height: 100%;}
             .maintainers li a {
                 border-bottom: 1px dotted;
                 color: #fff;
+                color: var(--theme-color);
                 display: inline-block;
                 text-decoration: none;
             }
