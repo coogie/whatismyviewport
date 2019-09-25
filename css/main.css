@@ -1,238 +1,161 @@
-/* ==========================================================================
-   Shiny new CSS Custom Properties for theming
-   ========================================================================== */
 :root {
-    --theme-background: #fff;
-    --theme-primary:        hsla(18, 88%, 55%, 1);
-    --theme-primary-darken: hsla(18, 88%, 48%, 1);
-    --theme-color: var(--theme-background);
+  --theme-background:     #fff;
+  --theme-primary:        hsla(18, 88%, 55%, 1);
+  --theme-primary-darken: hsla(18, 88%, 48%, 1);
+  --theme-color: var(--theme-background);
 }
 
 @media (prefers-color-scheme: dark) { 
-    :root {
-      --theme-background: #2a2a2a;
-      --theme-primary:        hsla(27, 93%, 58%, 1);
-      --theme-primary-darken: hsla(27, 93%, 51%, 1);
-    }
+  :root {
+    --theme-background:     #2a2a2a;
+    --theme-primary:        hsla(27, 93%, 58%, 1);
+    --theme-primary-darken: hsla(27, 93%, 51%, 1);
+  }
 } 
 
-/* ==========================================================================
-   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
-   ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
+html, body { height: 100%; }
 
 body {
-    background-color: #fff;
-    background-color: var(--theme-background);
-    font-size: 1em;
-    line-height: 1.4;
+  background-color: #fff;
+  background-color: var(--theme-background);
+  display: flex;
+  flex-direction: column;
 }
 
-::-moz-selection {
-    background: #fe57a1;
-    color: #fff;
-    text-shadow: none;
+.Message {
+  display: none;
+  font-size: 0.95em;
+  padding: .25rem .75rem;
+  position: relative;
+}
+.Message::after,
+.Message::before {
+  content: "";
+  display: block;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  z-index: -1;
+}
+.Message::after {
+  background-color: #f16529;
+  background-color: var(--theme-primary);
+  opacity: .2;
+}
+.Message::before {
+  border-bottom: 2px solid;
+  border-bottom-color: #e44d26;
+  border-bottom-color: var(--theme-primary-darken);
+}
+.ie-legacy .Message {
+  display: block;
 }
 
-::selection {
-    background: #fe57a1;
-    color: #fff;
-    text-shadow: none;
+.Main {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  text-align: center;
 }
 
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+.App {
+  color: #f16529;
+  color: var(--theme-primary);
+  font-size: 2.5rem;
+}
+.App__title {
+  margin: 0;
+  margin-bottom: .7em;
 }
 
-
-/* ===== Initializr Styles ==================================================
-   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
-
-html {
-    font-family: Helvetica, Helvetica Neue, Arial;
-    font-size: 62.5%;
+.Dimensions {
+  font-size: 1.75em;
+  margin: 0;
 }
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-* {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-        -ms-box-sizing: border-box;
-         -o-box-sizing: border-box;
-            box-sizing: border-box;
+.no-js .Dimensions {
+  display: none;
 }
-
-html, body {height: 100%;}
-
-.site-container {
-    height: 100%;
-    width: 100%;
-
-    /* Old flexbox syntax - maximise support for layout */
-    display: -webkit-box;
-    display:    -moz-box;
-    display:     -ms-box;
-    display:      -o-box;
-    display:         box;
-    -webkit-box-orient: vertical;
-       -moz-box-orient: vertical;
-        -ms-box-orient: vertical;
-         -o-box-orient: vertical;
-            box-orient: vertical;
-    
-    /* New flexbox syntax! */
-    display: -webkit-flex;
-    display:    -moz-flex;
-    display:     -ms-flex;
-    display:      -o-flex;
-    display:         flex;
-    -webkit-flex-direction: column;
-       -moz-flex-direction: column;
-        -ms-flex-direction: column;
-         -o-flex-direction: column;
-            flex-direction: column;
-}
-
-.main-container {
-    width: 100%;
-    margin: auto;
-
-    -webkit-box-flex: 1;
-       -moz-box-flex: 1;
-        -ms-box-flex: 1;
-         -o-box-flex: 1;
-            box-flex: 1;
-}
-    .main.wrapper {
-        color: #f16529;
-        color: var(--theme-primary);
-        font-size: 3rem;
-        margin: auto;
-        text-align: center;
-    }
-        .main.wrapper h1 {
-            margin-top: 0;
-            margin-bottom: 50px;
-        }
-        .main.wrapper .dimensions {
-            font-size: 2em;
-        }
 
 #w::after,
 #h::after {
-    content: "px";
-    font-size: 2rem;
+  content: "px";
+  font-size: 2rem;
 }
 
-.footer-container {
-    background: #f16529;
-    background: var(--theme-primary);
-    border-top: 20px solid;
-    border-top-color: #e44d26;
-    border-top-color: var(--theme-primary-darken);
-    color: #fff;
-    color: var(--theme-color);
-    font-size: 1.6rem;
-    padding: 20px;
+.Footer {
+  background-color: #f16529;
+  background-color: var(--theme-primary);
+  border-top: 20px solid;
+  border-top-color: #e44d26;
+  border-top-color: var(--theme-primary-darken);
+  color: #fff;
+  color: var(--theme-color);
+  padding: 20px;
 }
-    .footer-container h3 {
-        margin: 0;
-    }
-    .footer-container hr {
-        border: none;
-        border-bottom: 1px dashed;
-        border-bottom-color: #fff;
-        border-bottom-color: var(--theme-color);
-    }
-    .footer-container .wrapper {overflow: hidden;}
-    .maintainers {
-        list-style-type: none;
-        padding: 0;
-    }
-        .maintainers li {
-            display: inline;
-            float: left;
-            padding: 0 7px;
-        }
-        .maintainers li:not(:last-child)::after {content: ","; margin-left: 3px;}
-            .maintainers li a {
-                border-bottom: 1px dotted;
-                color: #fff;
-                color: var(--theme-color);
-                display: inline-block;
-                text-decoration: none;
-            }
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-/* Responsive: Landscape phone AND UP TO desktop/tablet
-/* --------------------------------------------- */
-@media (max-width: 767px) {
-    .main.wrapper h1 {display: none;}
+.Footer__title {
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: lowercase;
+}
+.Footer__divider {
+  border: none;
+  border-bottom: 1px dashed;
+  border-bottom-color: #fff;
+  border-bottom-color: var(--theme-color);
+}
+.Maintainers {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.Maintainers__item {
+  display: inline;
+  margin-right: .5em;
+}
+.Maintainers__item:not(:last-child)::after {
+  content: ",";
+}
+.Maintainers__link {
+  border-bottom: 1px dotted;
+  color: #fff;
+  color: var(--theme-color);
+  display: inline-block;
+  text-decoration: none;
 }
 
-/* UP TO LANDSCAPE PHONE MAX
-/* ------------------------- */
-@media (max-width: 480px) {
-    #w, #h {
-        display: block;
-    }
+
+@media only screen and (max-width: 35rem) and (orientation: landscape) {
+  .App__title { display: none; }
+  #w, #h { display: inline; }
 }
 
-@media only screen and (max-width: 568px) and (orientation:landscape) {
-    .main h1 {
-        display: none;
-    }
-    #w,
-    #h {
-        display: inline;
-    }
+@media (max-width: 30rem) {
+  #w, #h { display: block; }
 }
 
-@media only screen and (min-width: 1140px) {
-
-/* ===============
-    Maximal Width
-   =============== */
-
-    .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
-    }
+@media (max-width: 38rem) {
+  .App__title { display: none; }
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
+@media only screen and (min-width: 72rem) {
+  .Container {
+    margin: 0 auto;
+    width: 1024px;
+  }
 }
 
-.clearfix:after {
-    clear: both;
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
 }
 
-.clearfix {
-    *zoom: 1;
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
 }

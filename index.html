@@ -1,64 +1,73 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en" class="no-js">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>What is my viewport</title>
-		<meta name="description" content="What Is My Viewport &middot; A simple online tool for quickly finding the dimensions of your current device's viewport!">
-		<meta name="viewport" content="user-scalable=0, width=device-width, maximum-scale=1.0">
-
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/main.css">
-
+		<meta name="description" content="What Is My Viewport &mdash;; A simple online tool for quickly finding the dimensions of your current device's viewport!" />
+		<link rel="stylesheet" href="css/normalize.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
 		<!--[if lt IE 9]>
 			<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
-		<!--[if lt IE 7]>
-			<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-		<![endif]-->
+		
+		<aside class="Message" id="BrowserMessage">
+			<p>
+				You are using an <strong>outdated</strong> browser, accurate results are not
+				guaranteed. Please <a href="https://browsehappy.com/">upgrade your browser</a> for a
+				better experience.
+			</p>
+		</aside>
 
-		<div class="site-container">
-			<div class="main-container">
-				<div class="main wrapper clearfix">
-					<h1>Your viewport size is</h1>
-					<noscript>
-						<p>impossible to determine because you have javascript disabled!</p>
-					</noscript>
-					<span class="dimensions">
-						<span id="w"></span>
-						&times;
-						<span id="h"></span>
-					</span>
-				</div> <!-- #main -->
-			</div> <!-- #main-container -->
+		<main class="Container Main">
+			<article class="App">
+				<h1 class="App__title">Your viewport size is:</h1>
+				<noscript>
+					<p>impossible to determine because you have JavaScript disabled or blocked!</p>
+				</noscript>
+				<p class="Dimensions">
+					<span id="w"></span>
+					&times;
+					<span id="h"></span>
+				</p>
+			</article>
+		</main>
 
-			<div class="footer-container">
-				<footer class="wrapper">
-					<h3>made with all the love we could be bothered to muster</h3>
-					<hr>
-					<ul class="maintainers">
-						<li><a href="https://twitter.com/shaneog">Shane O'Grady</a></li>
-						<li><a href="https://twitter.com/coog_ie">Stephen Coogan</a></li>
-					</ul>
-				</footer>
+		<footer class="Footer">
+			<div class="Container">
+				<h2 class="Footer__title">Made with all the love we could be bothered to muster</h2>
+				<hr class="Footer__divider">
+				<ul class="Maintainers">
+					<li class="Maintainers__item">
+						<a class="Maintainers__link" href="https://twitter.com/shaneog">Shane O'Grady</a>
+					</li>
+					<li class="Maintainers__item">
+						<a class="Maintainers__link" href="https://twitter.com/coog_ie">Stephen Coogan</a>
+					</li>
+				</ul>
 			</div>
-		</div>
-		<script src="js/main.js"></script>
+		</footer>
 
+		<script async src="js/main.js"></script>
 		<script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			// Supports JS, remove classname
+			document.documentElement.className = document.documentElement.className.replace('no-js', '');
+			
+			var isIE = document.all && window.XMLHttpRequest;
+			if (isIE) {
+				document.documentElement.className += ' ie-legacy';
+			}
+		</script>
 
-          ga('create', 'UA-39417124-2', 'whatismyviewport.com');
-          ga('send', 'pageview');
-
-        </script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39417124-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-39417124-2');
+		</script>	
 	</body>
 </html>
