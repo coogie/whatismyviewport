@@ -86,14 +86,52 @@ body {
 }
 
 .Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.Footer-toggle {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  cursor: pointer;
+}
+.Footer-toggle svg {
+  fill: #f16529;
+  fill: var(--theme-primary);
+}
+.Footer-toggle svg:hover {
+  fill: #e44d26;
+  fill: var(--theme-primary-darken);
+}
+.Footer.Expanded .Footer-toggle svg {
+  fill: #fff;
+  fill: var(--theme-color);
+}
+.Footer .Container {
   background-color: #f16529;
   background-color: var(--theme-primary);
-  border-top: 20px solid;
   border-top-color: #e44d26;
   border-top-color: var(--theme-primary-darken);
+  border-top-width: 0;
+  border-top-style: solid;
   color: #fff;
   color: var(--theme-color);
+  overflow: hidden;
+  height: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+}
+.Footer.Expanded .Container {
+  height: auto;
   padding: 20px;
+  border-top-width: 20px;
 }
 .Footer__title {
   font-size: 1.2rem;
