@@ -9,6 +9,6 @@ window.addEventListener('load', displayViewport, false);
 window.addEventListener('resize', displayViewport, false);
 window.addEventListener('orientationchange', displayViewport, false);
 
-document.querySelectorAll('.Footer-toggle')[0].addEventListener('click', (event) => {
+document.querySelectorAll('.Footer-toggle')[0].addEventListener('click', function(event) {
   document.querySelectorAll('.Footer')[0].classList.toggle('Expanded');
 }, false);
