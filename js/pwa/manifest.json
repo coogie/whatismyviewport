@@ -1,0 +1,15 @@
+{
+    "name": "What Is My Viewport",
+    "short_name": "whatismyviewport",
+    "icons": [{
+      "src": "/js/pwa/icon.ico",
+        "sizes": "128x128",
+        "type": "image/ico"
+      }
+    ],
+    "start_url": "/index.html",
+    "gcm_sender_id": "103953800507",
+    "display": "standalone",
+    "background_color": "#2a2a2a",
+    "theme_color": "hsla(27, 93%, 58%, 1)"
+  }
