@@ -2,10 +2,11 @@ const cacheName = 'whatismyviewport-app';
 const staticAssets = [
     '/index.html',
     '/favicon.ico',
-    '/icon192.png',
-    '/icon512.png',
     '/manifest.json',
     '/sw.js',
+    '/icons/icon144.png',
+    '/icons/icon192.png',
+    '/icons/icon512.png',
     '/css/main.css',
     '/css/normalize.min.css',
     '/js/main.js',
