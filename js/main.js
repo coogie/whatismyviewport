@@ -12,13 +12,3 @@ window.addEventListener('orientationchange', displayViewport, false);
 document.querySelectorAll('.Footer-toggle')[0].addEventListener('click', function(event) {
   document.querySelectorAll('.Footer')[0].classList.toggle('Expanded');
 }, false);
-
-// Add Service Worker for the app to work offline
-async function installServiceWorker() {
-  if('serviceWorker' in navigator) {
-      await navigator.serviceWorker.register('/sw.js');
-      console.log('[Service Worker] Registered');
-  };
-}
-
-window.addEventListener("load", installServiceWorker);

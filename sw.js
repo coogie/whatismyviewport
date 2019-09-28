@@ -1,5 +1,6 @@
 const cacheName = 'whatismyviewport-app';
 const staticAssets = [
+    '/',
     '/index.html',
     '/favicon.ico',
     '/manifest.json',
