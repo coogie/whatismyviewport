@@ -14,7 +14,11 @@ document.querySelectorAll('.Footer-toggle')[0].addEventListener('click', functio
 }, false);
 
 // Add Service Worker for the app to work offline
-if('serviceWorker' in navigator) {
-  await navigator.serviceWorker.register('./pwa/sw.js');
-  console.log('[Service Worker] Registered');
-};
+async function installServiceWorker() {
+  if('serviceWorker' in navigator) {
+      await navigator.serviceWorker.register('/sw.js');
+      console.log('[Service Worker] Registered');
+  };
+}
+
+window.addEventListener("load", installServiceWorker);
