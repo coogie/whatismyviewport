@@ -78,7 +78,7 @@
 		
 		<script>
 			// Add Service Worker for the app to work offline
-			window.addEventListener("load", async event => {
+			window.addEventListener("load", async _ => {
 				if('serviceWorker' in navigator) {
 					await navigator.serviceWorker.register('/sw.js');
 					console.log('[Service Worker] Registered');

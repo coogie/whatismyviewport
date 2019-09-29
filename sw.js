@@ -25,19 +25,16 @@ self.addEventListener('install', async _ => {
 });
 
 self.addEventListener('fetch', event => {
-    event.respondWith(async function() {
-        let cachedResponse = await caches.match(event.request);
-        if (cachedResponse) {
-            console.log('[Service Worker] Fetching cached assets');
-            return cachedResponse;
-        }
-        let netResponse = await fetch(event.request);
-        if (staticAssets.includes(netResponse.url)) {
-            let cache = await caches.open(cacheName);
-            cache.put(event.request, netResponse.clone());
-        }
-        return netResponse;
-    }());
+    event.respondWith(
+        async function() {
+            let cachedResponse = await caches.match(event.request);
+            if (cachedResponse) {
+                console.log('[Service Worker] Fetching cached assets');
+                return cachedResponse;
+            }
+            return await fetch(event.request);
+        }()
+    );
 });
 
 
