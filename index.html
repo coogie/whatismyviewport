@@ -1,15 +1,17 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>What is my viewport</title>
-		<meta name="description" content="What Is My Viewport &mdash;; A simple online tool for quickly finding the dimensions of your current device's viewport!" />
-		<link rel="stylesheet" href="css/normalize.min.css" />
-		<link rel="stylesheet" href="css/main.css" />
+		<title>{{ site.title }}</title>
+		<meta name="description" content="{{ site.description }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/normalize.min.css' | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 		<!--[if lt IE 9]>
-			<script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
+			<script src="{{ '/assets/js/vendor/html5-3.6-respond-1.1.0.min.js' | relative_url }}"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -58,7 +60,7 @@
 			</div>
 		</footer>
 
-		<script async src="js/main.js"></script>
+		<script async src="{{ '/assets/js/main.js' | relative_url }}"></script>
 		<script>
 			// Supports JS, remove classname
 			document.documentElement.className = document.documentElement.className.replace('no-js', '');
