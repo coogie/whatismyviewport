@@ -1,12 +1,12 @@
 const cacheName = 'whatismyviewport-app';
 const staticAssets = [
-    '/',
-    '/index.html',
-    '/favicon.ico',
-    '/css/main.css',
-    '/css/normalize.min.css',
-    '/js/main.js',
-    '/js/vendor/html5shiv.min.js',
+    './',
+    './index.html',
+    './favicon.ico',
+    './css/main.css',
+    './css/normalize.min.css',
+    './js/main.js',
+    './js/vendor/html5shiv.min.js',
 ];
 
 importScripts('js/sw-offline-google-analytics/sw-offline-google-analytics.prod.v0.0.25.js');
