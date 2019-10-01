@@ -1,15 +1,16 @@
 const cacheName = 'whatismyviewport-app';
 const staticAssets = [
-    './',
-    './index.html',
-    './favicon.ico',
-    './css/main.css',
-    './css/normalize.min.css',
-    './js/main.js',
-    './js/vendor/html5shiv.min.js',
+    '/',
+    '/index.html',
+    '/404.html',
+    '/favicon.ico',
+    '/assets/css/main.css',
+    '/assets/css/normalize.min.css',
+    '/assets/js/main.js',
+    '/assets/js/vendor/html5shiv.min.js',
 ];
 
-importScripts('js/sw-offline-google-analytics/sw-offline-google-analytics.prod.v0.0.25.js');
+importScripts('/assets/js/sw-offline-google-analytics/sw-offline-google-analytics.prod.v0.0.25.js');
 goog.offlineGoogleAnalytics.initialize();
 
 self.addEventListener('install', async _ => {
