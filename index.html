@@ -10,6 +10,9 @@
 		<meta name="description" content="{{ site.description }}" />
 		<link rel="stylesheet" href="{{ '/assets/css/normalize.min.css' | relative_url }}" />
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+		<link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
+		<!-- Theme color for browser on mobile devices -->
+		<meta name="theme-color" content="hsla(27, 93%, 58%, 1)"/>
 		<!--[if lt IE 9]>
 			<script src="{{ '/assets/js/vendor/html5-3.6-respond-1.1.0.min.js' | relative_url }}"></script>
 		<![endif]-->
@@ -77,6 +80,21 @@
 			function gtag(){dataLayer.push(arguments);}
 			gtag('js', new Date());
 			gtag('config', 'UA-39417124-2');
-		</script>	
+		</script>
+		
+		<script>
+			// Add Service Worker for the app to work offline
+			window.addEventListener("load", function() {
+				if('serviceWorker' in navigator) {
+					navigator.serviceWorker.register('/sw.js')
+					.then(function() {
+						console.log('[Service Worker] Registered');
+					})
+					.catch(function(e) {
+						console.log('[Service Worker] Failed to register: ' + e.message);
+					});
+				};
+			});
+		</script>
 	</body>
 </html>
