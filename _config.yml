@@ -1,0 +1,13 @@
+title: What is my viewport
+description: >-
+  What Is My Viewport &mdash; A simple online tool for quickly finding the dimensions of
+  your current device's viewport!
+url: "https://whatismyviewport.com"
+
+# Build settings
+markdown: kramdown
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-redirect-from
