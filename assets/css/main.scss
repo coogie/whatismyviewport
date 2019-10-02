@@ -1,7 +1,8 @@
 ---
+# // Front matter required for Jekyll!
 ---
 
-$theme-primary: {{ site.theme.primary }};
+$theme-primary: {{ site.site_theme.primary }};
 
 :root {
   --theme-background:     #fff;
