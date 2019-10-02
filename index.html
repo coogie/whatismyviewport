@@ -65,12 +65,13 @@
 
 		<script async src="{{ '/assets/js/main.js' | relative_url }}"></script>
 		<script>
-			// Supports JS, remove classname
-			document.documentElement.classList.remove('no-js');
-			
-			var isIE = document.all && window.XMLHttpRequest;
-			if (isIE) {
-				document.documentElement.classList.add('ie-legacy');
+			var isIEOld = document.all && window.XMLHttpRequest;
+			var isIERecent = window.navigator.msPointerEnabled;
+			var body = document.documentElement;
+
+			body.className = document.documentElement.className.replace('no-js', '');
+			if (isIEOld || isIERecent) {
+				body.className += ' ie-legacy';
 			}
 		</script>
 
