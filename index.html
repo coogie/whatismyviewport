@@ -8,8 +8,8 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>{{ site.title }}</title>
 		<meta name="description" content="{{ site.description }}" />
-		<link rel="stylesheet" href="{{ '/assets/css/normalize.min.css' | relative_url }}" />
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+		<link rel="stylesheet" href="{{ '/assets/css/normalize.min.css' | relative_url }}" media="none" onload="if(media!='all')media='all'" />
 		<link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
 		<!-- Theme color for browser on mobile devices -->
 		<meta name="theme-color" content="{{ site.theme.primary }}" />
