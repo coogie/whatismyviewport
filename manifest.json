@@ -1,6 +1,8 @@
+---
+---
 {
-    "name": "What Is My Viewport",
-    "short_name": "whatismyviewport",
+    "name": "What is my Viewport",
+    "short_name": "Viewport Size",
     "icons": [{
       "src": "/assets/icons/icon192.png",
         "sizes": "192x192",
@@ -19,6 +21,6 @@
     ],
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#2a2a2a",
-    "theme_color": "hsla(27, 93%, 58%, 1)"
+    "background_color": "#ffffff",
+    "theme_color": "{{ site.theme.primary }}"
   }
