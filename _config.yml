@@ -10,7 +10,7 @@ sass:
   # style: expanded
   style: compressed
 
-theme:
+site_theme:
   primary: '#e64f0f'
 
 plugins:
