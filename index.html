@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 		<link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
 		<!-- Theme color for browser on mobile devices -->
-		<meta name="theme-color" content="hsla(27, 93%, 58%, 1)"/>
+		<meta name="theme-color" content="{{ site.theme.primary }}" />
 		<!--[if lt IE 9]>
 			<script src="{{ '/assets/js/vendor/html5-3.6-respond-1.1.0.min.js' | relative_url }}"></script>
 		<![endif]-->
@@ -66,11 +66,11 @@
 		<script async src="{{ '/assets/js/main.js' | relative_url }}"></script>
 		<script>
 			// Supports JS, remove classname
-			document.documentElement.className = document.documentElement.className.replace('no-js', '');
+			document.documentElement.classList.remove('no-js');
 			
 			var isIE = document.all && window.XMLHttpRequest;
 			if (isIE) {
-				document.documentElement.className += ' ie-legacy';
+				document.documentElement.classList.add('ie-legacy');
 			}
 		</script>
 
@@ -82,11 +82,12 @@
 			gtag('config', 'UA-39417124-2');
 		</script>
 		
+		{%- if jekyll.environment == 'production' -%}
 		<script>
 			// Add Service Worker for the app to work offline
 			window.addEventListener("load", function() {
 				if('serviceWorker' in navigator) {
-					navigator.serviceWorker.register('/sw.js')
+					navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}")
 					.then(function() {
 						console.log('[Service Worker] Registered');
 					})
@@ -96,5 +97,6 @@
 				};
 			});
 		</script>
+		{%- endif -%}
 	</body>
 </html>

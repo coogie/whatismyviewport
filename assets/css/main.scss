@@ -1,20 +1,22 @@
 ---
 ---
 
+$theme-primary: {{ site.theme.primary }};
+
 :root {
   --theme-background:     #fff;
-  --theme-primary:        hsla(18, 88%, 48%, 1);
-  --theme-primary-darken: hsla(18, 88%, 43%, 1);
+  --theme-primary:        #{$theme-primary};
+  --theme-primary-darken: #{adjust-color($theme-primary, $lightness: -5)};
   --theme-color: var(--theme-background);
 }
 
 @media (prefers-color-scheme: dark) { 
   :root {
     --theme-background:     #2a2a2a;
-    --theme-primary:        hsla(24, 96%, 56%, 1);
-    --theme-primary-darken: hsla(24, 96%, 51%, 1);
+    --theme-primary:        #{adjust-color($theme-primary, $saturation: 12, $lightness: 12)};
+    --theme-primary-darken: #{adjust-color($theme-primary, $saturation: 7, $lightness: 7)};
   }
-} 
+}
 
 html, body { height: 100%; }
 

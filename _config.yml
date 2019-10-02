@@ -10,5 +10,8 @@ sass:
   # style: expanded
   style: compressed
 
+theme:
+  primary: '#e64f0f'
+
 plugins:
   - jekyll-redirect-from
