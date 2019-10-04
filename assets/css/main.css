@@ -170,6 +170,28 @@ body {
   text-decoration: none;
 }
 
+#Explanation{
+  font-size: 12pt; 
+}
+
+#Toggle-Explanation{
+  background: #f1652991;
+  font-size: 12pt;
+  border: none;
+  color: white ;
+  padding: 12px 25px;
+  text-align: center;
+  margin: 2px 1px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#Toggle-Explanation:hover {opacity: 1}
+
 
 @media only screen and (max-width: 35rem) and (orientation: landscape) {
   .App__title { display: none; }

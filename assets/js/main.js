@@ -5,7 +5,7 @@ function displayViewport(event) {
   document.getElementById('h').innerHTML = verge.viewportH();
 }
 
-function explination() {
+function explanation() {
   var x = document.getElementById("Explination");
   if (x.innerHTML == "") {
     x.innerHTML = "Screen resolution is not the same as viewport size. Viewport refers to the visible area of a webpage on a device, while Screen resolution is the amount of pixels a device has";
