@@ -5,6 +5,15 @@ function displayViewport(event) {
   document.getElementById('h').innerHTML = verge.viewportH();
 }
 
+function explanation() {
+  var x = document.getElementsByClassName('Explanation');
+  if (x[0].style.display === "none") {
+    x[0].style.display = "block";
+  } else {
+    x[0].style.display = "none";
+  }
+} 
+
 window.addEventListener('load', displayViewport, false);
 window.addEventListener('resize', displayViewport, false);
 window.addEventListener('orientationchange', displayViewport, false);
