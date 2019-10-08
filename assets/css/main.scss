@@ -170,19 +170,20 @@ body {
   text-decoration: none;
 }
 
-#Explanation{
-  font-size: 12pt; 
+.Explanation{
+  font-size: 1rem; 
 }
 
-#Toggle-Explanation{
-  background: #f1652991;
-  font-size: 12pt;
+.Toggle-Explanation{
+  display: none;
+  background-color: $theme-primary;
+  background-color: var(--theme-primary);
+  font-size: 1rem;
   border: none;
-  color: white ;
-  padding: 12px 25px;
+  color: #fff;
+  color: var(--theme-color);
+  padding: .75em 1.5em;
   text-align: center;
-  margin: 2px 1px;
-  opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -190,7 +191,6 @@ body {
   cursor: pointer;
 }
 
-#Toggle-Explanation:hover {opacity: 1}
 
 
 @media only screen and (max-width: 35rem) and (orientation: landscape) {

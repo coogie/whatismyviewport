@@ -6,11 +6,11 @@ function displayViewport(event) {
 }
 
 function explanation() {
-  var x = document.getElementById("Explination");
-  if (x.innerHTML == "") {
-    x.innerHTML = "Screen resolution is not the same as viewport size. Viewport refers to the visible area of a webpage on a device, while Screen resolution is the amount of pixels a device has";
+  var x = document.getElementsByClassName('Explanation');
+  if (x[0].style.display === "none") {
+    x[0].style.display = "block";
   } else {
-    x.innerHTML = "";
+    x[0].style.display = "none";
   }
 } 
 
