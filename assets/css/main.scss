@@ -2,13 +2,18 @@
 # // Front matter required for Jekyll!
 ---
 
+$theme-background: #fff;
 $theme-primary: {{ site.site_theme.primary }};
+$theme-primary-darken: #{adjust-color($theme-primary, $lightness: -5)};
+$theme-color: $theme-background;
+$theme-icon-fill: $theme-primary;
 
 :root {
-  --theme-background:     #fff;
+  --theme-background:     #{$theme-background};
   --theme-primary:        #{$theme-primary};
-  --theme-primary-darken: #{adjust-color($theme-primary, $lightness: -5)};
+  --theme-primary-darken: #{$theme-primary-darken};
   --theme-color: var(--theme-background);
+  --theme-icon-fill: var(--theme-primary);
 }
 
 @media (prefers-color-scheme: dark) { 
@@ -22,7 +27,7 @@ $theme-primary: {{ site.site_theme.primary }};
 html, body { height: 100%; }
 
 body {
-  background-color: #fff;
+  background-color: $theme-background;
   background-color: var(--theme-background);
   display: flex;
   flex-direction: column;
@@ -46,13 +51,13 @@ body {
   z-index: -1;
 }
 .Message::after {
-  background-color: #f16529;
+  background-color: $theme-primary;
   background-color: var(--theme-primary);
   opacity: .2;
 }
 .Message::before {
   border-bottom: 2px solid;
-  border-bottom-color: #e44d26;
+  border-bottom-color: $theme-primary-darken;
   border-bottom-color: var(--theme-primary-darken);
 }
 .ie-legacy .Message {
@@ -68,7 +73,7 @@ body {
 }
 
 .App {
-  color: #f16529;
+  color: $theme-primary;
   color: var(--theme-primary);
   font-size: 2.5rem;
 }
@@ -92,106 +97,60 @@ body {
 }
 
 .Footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.Footer-toggle {
-  border: 0;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-  cursor: pointer;
-}
-.Footer-toggle svg {
-  fill: #f16529;
-  fill: var(--theme-primary);
-}
-.Footer-toggle svg:hover {
-  fill: #e44d26;
-  fill: var(--theme-primary-darken);
-}
-.Footer.Expanded .Footer-toggle svg {
-  fill: #fff;
-  fill: var(--theme-color);
-}
-.Footer .Container {
-  background-color: #f16529;
+  background-color: $theme-primary;
   background-color: var(--theme-primary);
-  border-top-color: #e44d26;
+  border-top-color: $theme-primary-darken;
   border-top-color: var(--theme-primary-darken);
   border-top-width: 0;
   border-top-style: solid;
-  color: #fff;
+  color: $theme-color;
   color: var(--theme-color);
-  overflow: hidden;
-  height: 0;
-  width: 100%;
-  text-align: center;
-  padding: 0;
-}
-.Footer.Expanded .Container {
-  height: auto;
-  padding: 20px;
-  border-top-width: 20px;
-}
-.Footer__title {
-  font-size: 1.2rem;
-  margin: 0;
-  text-transform: lowercase;
-}
-.Footer__divider {
-  border: none;
-  border-bottom: 1px dashed;
-  border-bottom-color: #fff;
-  border-bottom-color: var(--theme-color);
-}
-.Maintainers {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.Maintainers__item {
-  display: inline;
-  margin-right: .5em;
-}
-.Maintainers__item:not(:last-child)::after {
-  content: ",";
-}
-.Maintainers__link {
-  border-bottom: 1px dotted;
-  color: #fff;
-  color: var(--theme-color);
-  display: inline-block;
-  text-decoration: none;
-}
+  position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-.Explanation{
-  font-size: 1rem; 
+  &__toggle {
+    background-color: transparent;
+    border: 0;
+    bottom: 1.5rem;
+    cursor: pointer;  
+    margin: 0;
+    padding: 0;
+    position: absolute;
+      right: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  &__icon {
+    fill: $theme-icon-fill;
+    fill: var(--theme-icon-fill);
+
+    &:hover {
+      fill: $theme-primary-darken;
+      fill: var(--theme-primary-darken);
+    }
+  }
+
+  .Container {
+    overflow: hidden;
+    height: 0;
+    padding: 0;
+  }
+
+  &.Expanded {
+    border-top-width: 20px;
+    
+    .Container {
+      height: auto;
+      padding: 20px;
+    }
+  }
 }
-
-.Toggle-Explanation{
-  display: none;
-  background-color: $theme-primary;
-  background-color: var(--theme-primary);
-  font-size: 1rem;
-  border: none;
-  color: #fff;
-  color: var(--theme-color);
-  padding: .75em 1.5em;
-  text-align: center;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-
 
 @media only screen and (max-width: 35rem) and (orientation: landscape) {
   .App__title { display: none; }

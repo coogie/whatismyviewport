@@ -38,32 +38,27 @@
 					&times;
 					<span id="h"></span>
 				</p>
-
-				<button onclick="explanation()" class="Toggle-Explanation">Is this my screen resolution?</button>
-				<p class="Explanation">Screen resolution is not the same as viewport size. Viewport refers to the visible area of a webpage on a device, while Screen resolution is the amount of pixels a device has</p>
 			</article>
 		</main>
 
 		<footer class="Footer">
-			<button class="Footer-toggle" aria-label="Toggle footer visibility">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" role="img" aria-labelledby="heart_title heart_desc">
-					<title id="heart_title">Heart</title>
-					<desc id="heart_desc">A small heart icon</desc>
-					<path role="presentation" d="M5.8 0a7.8 7.8 0 0 0-1.7.4 7.1 7.1 0 0 0-1.9 1 7.9 7.9 0 0 0-.4.4A6 6 0 0 0 0 5.6a9.6 9.6 0 0 0 0 1.6c.2 1.8 1 3.4 2.5 5.2A27.5 27.5 0 0 0 4.1 14l3.2 2.7c2 1.4 2.6 2 3.3 2.8a7 7 0 0 1 1.4 1.8l.1-.2 1.3-1.6c.7-.8 1.4-1.4 3.3-2.8a38 38 0 0 0 5.6-5.4A8.7 8.7 0 0 0 24 5.6a6 6 0 0 0-1.8-3.8 7.9 7.9 0 0 0-.4-.4 7.1 7.1 0 0 0-1.9-1 7.8 7.8 0 0 0-1.3-.3h-1.9a5.9 5.9 0 0 0-1.8.5A5.6 5.6 0 0 0 12 4.3V4a5.6 5.6 0 0 0-5.5-4h-.7z"/>
+			<button class="Footer__toggle" aria-label="Toggle footer visibility">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="24" height="24" viewBox="0 0 200 200" role="img" aria-labelledby="info_title info_desc" class="Footer__icon">
+					<title id="info_title">Information Icon</title>
+					<desc id="info_desc">A small information icon</desc>
+					<path d="M197.1 100A97.1 97.1 0 113 100a97.1 97.1 0 11194.2 0z" fill="#fff"></path>
+					<path d="M100 0a100 100 0 100 200 100 100 0 000-200zm0 12.8a87.2 87.2 0 110 174.4 87.2 87.2 0 010-174.4zm1.5 21.3a57 57 0 00-15.3 2A41.3 41.3 0 0064.6 51a35.2 35.2 0 00-7.1 19.5l21.8 2.7.3-1c2-8 5.5-13.4 11-16.7 4.3-2.6 9.8-3.6 15.7-3 2.8.3 5.3 1 7.4 2 2.7 1.3 5.2 3.4 7 5.8a15 15 0 01-1.6 19.3c-2 2.1-5.2 4.9-10.8 9.4-3.6 3-6 5.2-8 7.4-5 5.2-7.3 9-8.6 14.7-1 3.7-1.3 7.5-1.2 13.2v3.4h21.7v-2.4c0-3.3.2-5.4.5-7.4.6-3.3 1.5-5 4-7.8 1.6-1.8 3.7-3.8 7-6.5 4.7-4 8-7 11.2-10.1 4.9-5 7.4-8.3 9.3-12.2a26.7 26.7 0 002.4-13.5c-.4-7-3-13.3-8.1-19a40.9 40.9 0 00-21.3-12.8 59 59 0 00-15.7-1.8zm-11 103.6v22h22v-22h-22z"></path>
 				</svg>
 			</button>
-			<div class="Container">
-				<h2 class="Footer__title">Made with all the love we could be bothered to muster</h2>
-				<hr class="Footer__divider">
-				<ul class="Maintainers">
-					<li class="Maintainers__item">
-						<a class="Maintainers__link" href="https://twitter.com/shaneog">Shane O'Grady</a>
-					</li>
-					<li class="Maintainers__item">
-						<a class="Maintainers__link" href="https://twitter.com/coog_ie">Stephen Coogan</a>
-					</li>
-				</ul>
-			</div>
+			<aside class="Container">
+				<h2 class="Footer__title">Is this my screen resolution?</h2>
+				<p>
+					No, screen resolution is not the same as viewport size. Screen resolution is the absolute number of pixels in your device's display.
+				</p>
+				<p>
+					Viewport size refers to the visible area available to a webpage inside a browser or application, minus that application's interface (such as URL bar, dev tools, operating system, etc.).
+				</p>
+			</aside>
 		</footer>
 
 		<script async src="{{ '/assets/js/main.js' | relative_url }}"></script>
@@ -79,6 +74,7 @@
 
 		</script>
 
+	{%- if jekyll.environment == 'production' -%}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39417124-2"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -87,7 +83,6 @@
 			gtag('config', 'UA-39417124-2');
 		</script>
 		
-		{%- if jekyll.environment == 'production' -%}
 		<script>
 			// Add Service Worker for the app to work offline
 			window.addEventListener("load", function() {
