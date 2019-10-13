@@ -11,7 +11,7 @@ sass:
   style: compressed
 
 site_theme:
-  primary: '#e64f0f'
+  primary: '#d74002'
 
 plugins:
   - jekyll-redirect-from
