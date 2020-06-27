@@ -78,6 +78,7 @@ body {
   font-size: 2.5rem;
 }
 .App__title {
+  display: none;
   margin: 0;
   margin-bottom: .7em;
 }
@@ -90,10 +91,29 @@ body {
   display: none;
 }
 
-#w::after,
-#h::after {
-  content: "px";
-  font-size: 2rem;
+#w, #h { display: block; }
+
+#w,
+#h,
+#screen_w,
+#screen_h {
+  &::after {
+    content: "px";
+    font-size: .75em;
+  }
+}
+
+.Additional {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: .5em;
+  justify-content: center;
+
+  p {
+    margin: 5px 0;
+  }
 }
 
 .Footer {
@@ -152,17 +172,22 @@ body {
   }
 }
 
-@media only screen and (max-width: 35rem) and (orientation: landscape) {
-  .App__title { display: none; }
+@media only screen and (min-width: 35rem) and (orientation: landscape) {
   #w, #h { display: inline; }
 }
 
-@media (max-width: 30rem) {
-  #w, #h { display: block; }
-}
+@media (min-width: 38rem) {
+  .App__title { display: block; }
 
-@media (max-width: 38rem) {
-  .App__title { display: none; }
+  .Additional {
+    flex-direction: row;
+    font-size: .7em;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+    }
+  }
 }
 
 
