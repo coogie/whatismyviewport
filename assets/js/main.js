@@ -6,7 +6,7 @@ function updateViewport() {
 }
 
 function updateDPR() {
-  document.getElementById('dpr').innerHTML = window.devicePixelRatio;
+  document.getElementById('dpr').innerHTML = window.devicePixelRatio.toFixed(2);
 }
 
 function updateScreenRes() {
