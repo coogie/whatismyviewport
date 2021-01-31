@@ -1,4 +1,4 @@
-const cacheName = 'whatismyviewport-app';
+const cacheName = 'whatismyviewport-app-20210131';
 const staticAssets = [
     '/',
     '/index.html',
