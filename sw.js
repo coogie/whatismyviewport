@@ -11,7 +11,11 @@ const staticAssets = [
 ];
 
 importScripts('/assets/js/sw-offline-google-analytics/sw-offline-google-analytics.prod.v0.0.25.js');
-goog.offlineGoogleAnalytics.initialize();
+goog.offlineGoogleAnalytics.initialize({
+    parameterOverrides: {
+        serviceWorker: 1
+    }
+});
 
 self.addEventListener('install', async _ => {
     console.log('[Service Worker] Installed');
