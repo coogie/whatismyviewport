@@ -1,40 +1,15 @@
-const cacheName = 'whatismyviewport-app-20210131';
-const staticAssets = [
-    '/',
-    '/index.html',
-    '/404.html',
-    '/favicon.ico',
-    '/assets/css/main.css',
-    '/assets/css/normalize.min.css',
-    '/assets/js/main.js',
-    '/assets/js/vendor/html5shiv.min.js',
-];
+const modulePathPrefix = '/assets/js/vendor/workbox-v6.5.4/';
+importScripts(`${modulePathPrefix}workbox-sw.js`);
+workbox.setConfig({ modulePathPrefix });
+workbox.loadModule('workbox-google-analytics')
+workbox.loadModule('workbox-precaching')
 
-importScripts('/assets/js/sw-offline-google-analytics/sw-offline-google-analytics.prod.v0.0.25.js');
-goog.offlineGoogleAnalytics.initialize({
-    parameterOverrides: {
-        serviceWorker: 1
-    }
-});
-
-self.addEventListener('install', async _ => {
-    console.log('[Service Worker] Installed');
-    let cache = await caches.open(cacheName);
-    console.log('[Service Worker] Caching Static Assets');
-    cache.addAll(staticAssets);
-});
-
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        async function() {
-            let cachedResponse = await caches.match(event.request);
-            if (cachedResponse) {
-                console.log('[Service Worker] Fetching cached assets');
-                return cachedResponse;
-            }
-            return await fetch(event.request);
-        }()
-    );
-});
-
-
+workbox.googleAnalytics.initialize();
+workbox.precaching.precacheAndRoute([
+    { url: '/index.html',                   revision: '1' },
+    { url: '/404.html',                     revision: '1' },
+    { url: '/favicon.ico',                  revision: '1' },
+    { url: '/assets/css/main.css',          revision: '1' },
+    { url: '/assets/css/normalize.min.css', revision: '1' },
+    { url: '/assets/js/main.js',            revision: '1' },
+]);
