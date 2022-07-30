@@ -14,6 +14,5 @@ Shane O'Grady
 # TECHNOLOGY COLOPHON
 	-- HTML5, CSS3
 	-- Github Pages
-	-- html5shiv 3.7.3 (https://github.com/aFarkas/html5shiv)
 	-- modern-normalize 0.5.0 (https://github.com/sindresorhus/modern-normalize)
 	-- verge 1.10.2 (https://github.com/ryanve/verge)
