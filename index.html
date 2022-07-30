@@ -94,13 +94,7 @@
 			// Add Service Worker for the app to work offline
 			window.addEventListener("load", function() {
 				if('serviceWorker' in navigator) {
-					navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}")
-					.then(function() {
-						console.log('[Service Worker] Registered');
-					})
-					.catch(function(e) {
-						console.log('[Service Worker] Failed to register: ' + e.message);
-					});
+					navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}");
 				};
 			});
 		</script>
