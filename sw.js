@@ -1,8 +1,7 @@
-const modulePathPrefix = '/assets/js/vendor/workbox-v6.5.4/';
-importScripts(`${modulePathPrefix}workbox-sw.js`);
-workbox.setConfig({ modulePathPrefix });
-workbox.loadModule('workbox-google-analytics')
-workbox.loadModule('workbox-precaching')
+importScripts('/assets/js/vendor/workbox-v6.5.4/workbox-sw.js');
+workbox.setConfig({
+  modulePathPrefix: '/assets/js/vendor/workbox-v6.5.4/',
+});
 
 workbox.googleAnalytics.initialize({
     parameterOverrides: {
