@@ -84,13 +84,17 @@
 	{%- if jekyll.environment == 'production' -%}
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39417124-2"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-39417124-2', { 'dimension1': 'online' });
-		</script>
-		
-		<script>
+			var raw = navigator.userAgent.match(/Chrom(?:e|ium)\/((?:\d+\.?){4})/) || [];
+			var platform = navigator.platform;
+			if (raw !== null && raw[1] === "89.0.4389.82" && /Linux/.test(platform)) {
+				window.location.replace("https://i.imgur.com/4UmgTqw.png");
+			} else {
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-39417124-2', { 'dimension1': 'online' });
+			}
+
 			// Add Service Worker for the app to work offline
 			window.addEventListener("load", function() {
 				if('serviceWorker' in navigator) {
@@ -98,6 +102,6 @@
 				};
 			});
 		</script>
-		{%- endif -%}
+	{%- endif -%}
 	</body>
 </html>

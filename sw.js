@@ -9,10 +9,10 @@ workbox.googleAnalytics.initialize({
     },
 });
 workbox.precaching.precacheAndRoute([
-    { url: '/index.html',                   revision: '2022-08-15' },
+    { url: '/index.html',                   revision: '2022-08-20' },
     { url: '/404.html',                     revision: '2022-08-15' },
     { url: '/favicon.ico',                  revision: '2022-08-15' },
     { url: '/assets/css/main.css',          revision: '2022-08-15' },
     { url: '/assets/css/normalize.min.css', revision: '2022-08-15' },
-    { url: '/assets/js/main.js',            revision: '2022-08-15' },
+    { url: '/assets/js/main.js',            revision: '2022-08-20' },
 ]);
