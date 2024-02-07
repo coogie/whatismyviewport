@@ -1,9 +1,5 @@
----
-# // Front matter required for Jekyll!
----
-
 $theme-background: #fff;
-$theme-primary: {{ site.site_theme.primary }};
+$theme-primary:  #d74002;
 $theme-primary-darken: #{adjust-color($theme-primary, $lightness: -5)};
 $theme-color: $theme-background;
 $theme-icon-fill: $theme-primary;

@@ -1,26 +1,27 @@
 ---
 ---
 {
-    "name": "What is my Viewport",
-    "short_name": "Viewport Size",
-    "icons": [{
+  "name": "Viewport",
+  "short_name": "Viewport Size",
+  "icons": [
+    {
       "src": "/assets/icons/icon192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-      {
-        "src": "/assets/icons/icon144.png",
-        "sizes": "144x144",
-        "type": "image/png"
-      }
-    ],
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "{{ site.site_theme.primary }}"
-  }
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d74002"
+}

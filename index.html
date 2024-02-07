@@ -1,107 +1,100 @@
----
----
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>{{ site.title }}</title>
-		<meta name="description" content="{{ site.description }}" />
-		<link rel="canonical" href="https://whatismyviewport.com/" />
-		<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-		<link rel="stylesheet" href="{{ '/assets/css/normalize.min.css' | relative_url }}" media="none" onload="if(media!='all')media='all'" />
-		<link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
-		<!-- Theme color for browser on mobile devices -->
-		<meta name="theme-color" content="{{ site.site_theme.primary }}" />
-	</head>
-	<body>
-		
-		<aside class="Message" id="BrowserMessage">
-			<p>
-				You are using an <strong>outdated</strong> browser, accurate results are not
-				guaranteed. Please <a href="https://browsehappy.com/" rel="noopener noreferrer nofollow">
-				upgrade your browser</a> for a better experience.
-			</p>
-		</aside>
 
-		<main class="Container Main">
-			<article class="App">
-				<h1 class="App__title">Your viewport size is:</h1>
-				<noscript>
-					<p>impossible to determine because you have JavaScript disabled or blocked!</p>
-				</noscript>
-				<p class="Dimensions">
-					<span id="w"></span>
-					&times;
-					<span id="h"></span>
-				</p>
-				<hr />
-				<div class="Additional">
-					<p>
-						<abbr title="Device Pixel Ratio">DPR</abbr>: <span id="dpr"></span>
-					</p>
-					<p>
-						Screen Size: <span id="screen_w"></span> &times; <span id="screen_h"></span>
-					</p>
-				</div>
-			</article>
-		</main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Viewport | saiko.app</title>
+  <meta name="description"
+    content="What Is My Viewport &mdash; A simple online tool for quickly finding the dimensions of your current device's viewport!" />
+  <link rel="canonical" href="https://whatismyviewport.com/" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/normalize.min.css" media="none" onload="if(media!='all')media='all'" />
+  <link rel="manifest" href="manifest.json">
+  <!-- Theme color for browser on mobile devices -->
+  <meta name="theme-color" content="#d74002" />
+</head>
 
-		<footer class="Footer">
-			<button class="Footer__toggle" aria-label="Toggle footer visibility">
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="24" height="24" viewBox="0 0 200 200" role="img" aria-labelledby="info_title info_desc" class="Footer__icon">
-					<title id="info_title">Information Icon</title>
-					<desc id="info_desc">A small information icon</desc>
-					<path d="M197.1 100A97.1 97.1 0 113 100a97.1 97.1 0 11194.2 0z" fill="#fff"></path>
-					<path d="M100 0a100 100 0 100 200 100 100 0 000-200zm0 12.8a87.2 87.2 0 110 174.4 87.2 87.2 0 010-174.4zm1.5 21.3a57 57 0 00-15.3 2A41.3 41.3 0 0064.6 51a35.2 35.2 0 00-7.1 19.5l21.8 2.7.3-1c2-8 5.5-13.4 11-16.7 4.3-2.6 9.8-3.6 15.7-3 2.8.3 5.3 1 7.4 2 2.7 1.3 5.2 3.4 7 5.8a15 15 0 01-1.6 19.3c-2 2.1-5.2 4.9-10.8 9.4-3.6 3-6 5.2-8 7.4-5 5.2-7.3 9-8.6 14.7-1 3.7-1.3 7.5-1.2 13.2v3.4h21.7v-2.4c0-3.3.2-5.4.5-7.4.6-3.3 1.5-5 4-7.8 1.6-1.8 3.7-3.8 7-6.5 4.7-4 8-7 11.2-10.1 4.9-5 7.4-8.3 9.3-12.2a26.7 26.7 0 002.4-13.5c-.4-7-3-13.3-8.1-19a40.9 40.9 0 00-21.3-12.8 59 59 0 00-15.7-1.8zm-11 103.6v22h22v-22h-22z"></path>
-				</svg>
-			</button>
-			<aside class="Container">
-				<h2 class="Footer__title">Is this my screen resolution?</h2>
-				<p>
-					No, screen resolution is not the same as viewport size. Screen resolution is the absolute number of pixels in your device's display.
-				</p>
-				<p>
-					Viewport size refers to the visible area available to a webpage inside a browser or application, minus that application's interface (such as URL bar, dev tools, operating system, etc.).
-				</p>
-			</aside>
-		</footer>
+<body>
 
-		<script async src="{{ '/assets/js/main.js' | relative_url }}"></script>
-		<script>
-			var isIEOld = document.all && window.XMLHttpRequest;
-			var isIERecent = window.navigator.msPointerEnabled;
-			var body = document.documentElement;
+  <aside class="Message" id="BrowserMessage">
+    <p>
+      You are using an <strong>outdated</strong> browser, accurate results are not
+      guaranteed. Please <a href="https://browsehappy.com/" rel="noopener noreferrer nofollow">
+        upgrade your browser</a> for a better experience.
+    </p>
+  </aside>
 
-			body.className = document.documentElement.className.replace('no-js', '');
-			if (isIEOld || isIERecent) {
-				body.className += ' ie-legacy';
-			}
+  <main class="Container Main">
+    <article class="App">
+      <h1 class="App__title">Your viewport size is:</h1>
+      <noscript>
+        <p>impossible to determine because you have JavaScript disabled or blocked!</p>
+      </noscript>
+      <p class="Dimensions">
+        <span id="w"></span>
+        &times;
+        <span id="h"></span>
+      </p>
+      <hr />
+      <div class="Additional">
+        <p>
+          <abbr title="Device Pixel Ratio">DPR</abbr>: <span id="dpr"></span>
+        </p>
+        <p>
+          Screen Size: <span id="screen_w"></span> &times; <span id="screen_h"></span>
+        </p>
+      </div>
+    </article>
+  </main>
 
-		</script>
+  <footer class="Footer">
+    <button class="Footer__toggle" aria-label="Toggle footer visibility">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="24" height="24" viewBox="0 0 200 200" role="img"
+        aria-labelledby="info_title info_desc" class="Footer__icon">
+        <title id="info_title">Information Icon</title>
+        <desc id="info_desc">A small information icon</desc>
+        <path d="M197.1 100A97.1 97.1 0 113 100a97.1 97.1 0 11194.2 0z" fill="#fff"></path>
+        <path
+          d="M100 0a100 100 0 100 200 100 100 0 000-200zm0 12.8a87.2 87.2 0 110 174.4 87.2 87.2 0 010-174.4zm1.5 21.3a57 57 0 00-15.3 2A41.3 41.3 0 0064.6 51a35.2 35.2 0 00-7.1 19.5l21.8 2.7.3-1c2-8 5.5-13.4 11-16.7 4.3-2.6 9.8-3.6 15.7-3 2.8.3 5.3 1 7.4 2 2.7 1.3 5.2 3.4 7 5.8a15 15 0 01-1.6 19.3c-2 2.1-5.2 4.9-10.8 9.4-3.6 3-6 5.2-8 7.4-5 5.2-7.3 9-8.6 14.7-1 3.7-1.3 7.5-1.2 13.2v3.4h21.7v-2.4c0-3.3.2-5.4.5-7.4.6-3.3 1.5-5 4-7.8 1.6-1.8 3.7-3.8 7-6.5 4.7-4 8-7 11.2-10.1 4.9-5 7.4-8.3 9.3-12.2a26.7 26.7 0 002.4-13.5c-.4-7-3-13.3-8.1-19a40.9 40.9 0 00-21.3-12.8 59 59 0 00-15.7-1.8zm-11 103.6v22h22v-22h-22z">
+        </path>
+      </svg>
+    </button>
+    <aside class="Container">
+      <h2 class="Footer__title">Is this my screen resolution?</h2>
+      <p>
+        No, screen resolution is not the same as viewport size. Screen resolution is the absolute number of pixels in
+        your device's display.
+      </p>
+      <p>
+        Viewport size refers to the visible area available to a webpage inside a browser or application, minus that
+        application's interface (such as URL bar, dev tools, operating system, etc.).
+      </p>
+    </aside>
+  </footer>
 
-	{%- if jekyll.environment == 'production' -%}
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39417124-2"></script>
-		<script>
-			var raw = navigator.userAgent.match(/Chrom(?:e|ium)\/((?:\d+\.?){4})/) || [];
-			var platform = navigator.platform;
-			if (raw !== null && raw[1] === "89.0.4389.82" && /Linux/.test(platform)) {
-				window.location.replace("https://i.imgur.com/4UmgTqw.png");
-			} else {
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('config', 'UA-39417124-2', { 'dimension1': 'online' });
-			}
+  <script async src="assets/js/main.js"></script>
+  <script>
+    var isIEOld = document.all && window.XMLHttpRequest;
+    var isIERecent = window.navigator.msPointerEnabled;
+    var body = document.documentElement;
 
-			// Add Service Worker for the app to work offline
-			window.addEventListener("load", function() {
-				if('serviceWorker' in navigator) {
-					navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}");
-				};
-			});
-		</script>
-	{%- endif -%}
-	</body>
+    body.className = document.documentElement.className.replace('no-js', '');
+    if (isIEOld || isIERecent) {
+      body.className += ' ie-legacy';
+    }
+
+  </script>
+
+  <script>
+    // Add Service Worker for the app to work offline
+    window.addEventListener("load", function () {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/sw.js");
+      };
+    });
+  </script>
+</body>
+
 </html>
